@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@tsconfig/node-lts": "^24.0.1",
+    "@types/node": "^26.6.4"
+  },
+  "dependencies": {
+    "fastify": "^5.12.5"
+  }
+}
