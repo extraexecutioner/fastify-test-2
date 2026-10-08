@@ -1,0 +1,23 @@
+name: fastify-test2
+services:
+    api-service:
+        build: ../api
+        env_file:
+            - ../api/.env
+        ports:
+            - "${SERVER_PORT}:${SERVER_PORT}"
+        healthcheck:
+            test: ["CMD-SHELL", "curl -X OPTIONS http://localhost:${SERVER_PORT}"]
+            retries: 3
+            timeout: 5s
+            start_period: 3s
+            interval: 20s
+        deploy:
+            replicas: 1
+            update_config:
+                order: start-first
+            restart_policy:
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+                window: 60s

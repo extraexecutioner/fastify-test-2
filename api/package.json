@@ -4,6 +4,10 @@
     "@types/node": "^26.6.4"
   },
   "dependencies": {
+    "@fastify/cors": "^11.3.0",
     "fastify": "^5.12.5"
+  },
+  "scripts": {
+    "build": "npx esbuild src/index.ts --bundle --platform=node --target=node24 --tree-shaking=true --format=cjs --minify --legal-comments=none --outfile=dist/bundle.cjs"
   }
 }

@@ -10,3 +10,4 @@ neededEnvFiles.forEach(envFile => {
 })
 
 const server = new Server()
+server.init()
